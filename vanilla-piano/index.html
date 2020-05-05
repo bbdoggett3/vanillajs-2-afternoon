@@ -104,7 +104,7 @@
             </div>
         </div>
 
-        <svg height="230">
+        <svg height="230"> <!--SVG is a language for describing 2D graphics in XML-->
             <polygon points="200,10 230,10 230,100 245,100 245,220 200,220 200,10" class="white pianoKey" data-key="97" />
             <polygon points="245,100 260,100 260,10 275,10 275,100 290,100 290,220 245,220 245,100" class="white pianoKey" data-key="115"
             />
@@ -165,6 +165,31 @@
 </body>
 
 <script>
+//     window.addEventListener('keypress', function(keypressEvent) {
+//         const tone = document.querySelector(`audio[data-key= "${keyPressEvent.keyCode}"]`);
+//         if (!tone) return;
+//         const pianoKey = document.querySelector(`.pianoKey[data-key="${keyPressEvent.keyCode}"]`);
+//         tone.currentTime = 0;
+//         tone.play();
+//         setTimeout(function() {
+//         pianoKey.classList.remove("pressed");
+//     }, 300);
+//  });
+
+window.addEventListener("keypress", function(keyPressEvent) {
+  const tone = document.querySelector(`audio[data-key="${keyPressEvent.keyCode}"]`);
+  if (!tone) return;
+  const pianoKey = document.querySelector(`.pianoKey[data-key="${keyPressEvent.keyCode}"]`);
+  tone.currentTime = 0;
+
+  pianoKey.classList.add("pressed");
+  tone.play();
+  
+  setTimeout(function() {
+    pianoKey.classList.remove("pressed");
+  }, 300);
+});
+
 </script>
 
 </html>
