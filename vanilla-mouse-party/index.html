@@ -71,7 +71,7 @@
     };
 
     //STEP 2
-    //THis is our 'mousemove' event listener.
+    //This is our 'mousemove' event listener.
     window.addEventListener('mousemove', function(mouseMoveEvent) {
         console.log(mouseMoveEvent);
         mousePosition.x = mouseMoveEvent.pageX;
@@ -83,11 +83,9 @@
         return setInterval(function() {
     const container = document.getElementById("wrap");
 
-    const color = `background:rgb(${getRandomNumber(0, 255)},${getRandomNumber(
-      0,
-      255
-    )}, ${getRandomNumber(0, 255)});`;
+    const color = `background:rgb(${getRandomNumber(0, 255)},${getRandomNumber(0, 255)}, ${getRandomNumber(0, 255)});`;  //this will be randomizing the RGB of the ball
 
+    //Here is more use of using the random number of the min and max which was created above.
     const ballSize = getRandomNumber(10, 30);
     const size = `height:${ballSize}px; width:${ballSize}px;`;
     const left = `left:${getRandomNumber(
